@@ -8,12 +8,12 @@ script:
     - docker run vishal/react-test npm test -- --coverage  
 
 after_success:
-    - docker build -t vishal/multi-client ./client
-    - docker build -t vishal/multi-nginx ./nginx
-    - docker build -t vishal/multi-server ./server
-    - docker build -t vishal/multi-worker ./worker
+    - docker build -t vishal2020/multi-client ./client
+    - docker build -t vishal2020/multi-nginx ./nginx
+    - docker build -t vishal2020/multi-server ./server
+    - docker build -t vishal2020/multi-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push vishal/multi-client
-    - docker push vishal/multi-nginx
-    - docker push vishal/multi-server
-    - docker push vishal/multi-worker
+    - docker push vishal2020/multi-client
+    - docker push vishal2020/multi-nginx
+    - docker push vishal2020/multi-server
+    - docker push vishal2020/multi-worker
